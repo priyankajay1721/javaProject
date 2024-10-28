@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Table</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .table-wrapper {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .btn
+        {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-wrapper">
+
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>ADDRESS</th>
+                    <th>Room No.</th>
+                    <th>Order Food</th>
+                    <th>Quantity</th>
+                    <th>Special Instruction</th>
+                    <th>Action-Delete</th>
+                    <th>Action-Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tempCustomer:${OrderFood}">
+                    <td th:text="${tempCustomer.Id}"></td>
+                    <td th:text="${tempCustomer.fullName}"></td>
+                    <td th:text="${tempCustomer.email}"></td>
+                    <td th:text="${tempCustomer.contact}"></td>
+                    <td th:text="${tempCustomer.address}"></td>
+                    <td th:text="${tempCustomer.room_no}"></td>
+                    <td th:text="${tempCustomer.food}"></td>
+                    <td th:text="${tempCustomer.quantity}"></td>
+                    <td th:text="${tempCustomer.special_instruction}"></td>
+                    <td><form th:action="@{/deletefood}" method="post">
+                        <input type="hidden" name="Id" th:value="${tempCustomer.Id}">
+                        <button class="btn btn-danger">Delete</button></form>
+                    </td>
+                    <td><button class="btn btn-success">Update</button></td>
+                </tr>
+
+                
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+    </div>
+    <button style="background-color: rgb(243, 184, 57); color: rgb(9, 9, 17);margin-left: 750px; border-radius:20px"><a th:href="@{/returnFoodform}">Back To Home</a> </button>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

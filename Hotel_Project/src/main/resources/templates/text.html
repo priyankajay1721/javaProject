@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <div class="form-group row">
+                        <label for="bed_type" class="col-sm-2 col-form-label">Select Bed</label>
+                        <div class="col-sm-10">
+                            <select id="bed_type" name="BedType" class="form-control" th:field="*{bedtype}" required>
+                                <option th:value="select your option">Select your option</option> 
+                                <option th:value="single">Single</option>
+                                <option th:value="double">Double</option>
+                               
+                            </select>
+                        </div>
+                    </div> -->
+                    <!-- <div class="form-group row">
+                        <label for="accomodation" class="col-sm-2 col-form-label">Select Accomodation</label>
+                        <div class="col-sm-10">
+                            <select id="accomodation" name="accomodation" class="form-control" th:field="*{accomodation}" required>
+                                <!-- <option th:value="select your option">Select your option</option> -->
+                                <!-- <option th:value="premium">Premium</option>
+                                <option th:value="general">General</option>
+                               
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label for="add_accomodation" class="col-sm-2 col-form-label">Additional Accomodation</label>
+                        <div class="col-sm-10">
+                            <select id="add_accomodation" name="add_accomodation" class="form-control" th:field="*{add_accomodation}" required>
+                                <!-- <option th:value="select your option">Select your option</option> -->
+                                <option th:value="pool">POOL</option>
+                                <option th:value="game_lot">GAME</option>
+                               
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="form-group row">
+                        <label for="payment-method" class="col-sm-2 col-form-label">Paymeny Method:</label>
+                        <div class="col-sm-10">
+                            <select id="payment-method" name="payment-method" class="form-control" th:field="*{payment_method}" required>
+                                <!-- <option th:value="select your option">Select your option</option> -->
+                                <option th:value="credit-card">Credit Card</option>
+                                <option th:value="debit-card">Debit Card</option>
+                                <option th:value="paypal">PayPal</option>
+                                <option th:value="net-banking">Net Banking</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @RequestMapping("/booking")
+		public String confirmBooking(Model theModel, @ModelAttribute("Mybooking") Hotel theHotel) {
+			System.out.println(theHotel);
+		
+//					LocalDate checkin = LocalDate.parse(theHotel.getCheck_in());
+//					LocalDate checkout = LocalDate.parse(theHotel.getCheck_out());
+//					long days = ChronoUnit.DAYS.between(checkin, checkout);					
+//					
+//					RoomDetails theRoomDetails = new RoomDetails();
+//					float totalBill = days * theRoomDetails.getPrice();
+//					theModel.addAttribute("Booking" ,theHotel);
+//					theModel.addAttribute("bill" ,theRoomDetails);
+//					
+//					Billing theBilling = new Billing();
+//					theBilling.setDays(days);
+//					theBilling.setTotalBill(totalBill);
+//					theModel.addAttribute("finalBill" ,theBilling);
+//					
+			
+			return "confirmBooking";
+			
+		}
+		
+</body>
+</html>
